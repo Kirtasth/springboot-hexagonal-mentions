@@ -1,0 +1,19 @@
+services:
+  mysql:
+    container_name: "mysql_menciones"
+    image: "mysql:latest"
+    restart: always
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - mysql_menciones_volumen:/data
+    environment:
+      MYSQL_DATABASE: db_menciones
+      MYSQL_USER: db_user_1
+      MYSQL_PASSWORD: db_pass_1
+      MYSQL_ROOT_PASSWORD: sasa1234
+
+volumes:
+  mysql_menciones_volumen:
