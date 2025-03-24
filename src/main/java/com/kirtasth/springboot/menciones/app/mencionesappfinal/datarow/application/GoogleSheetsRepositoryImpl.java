@@ -14,6 +14,12 @@ import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.api.services.sheets.v4.model.ValueRange;
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.datarow.domain.DataRow;
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.datarow.infrastructure.GoogleSheetsRepository;
+import io.github.cdimascio.dotenv.Dotenv;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -34,7 +40,9 @@ public class GoogleSheetsRepositoryImpl implements GoogleSheetsRepository {
     private final String TOKENS_DIRECTORY_PATH = "/json/token.json";
 
     // Conso get the data
-    private final String EXCEL_ID = "1lP_8StTbNDGs8e0ivYoCrOSCkUKWMcwi46yuVKLnawc";
+    private final Dotenv dotenv = Dotenv.load();
+    private final String EXCEL_ID = dotenv.get("GOOGLE_DATA_SHEET");
+
     private final String EXCEL_RANGE = "A1:Z3000";
 
     private final int CLASS_ID_COL = 0;
@@ -55,6 +63,8 @@ public class GoogleSheetsRepositoryImpl implements GoogleSheetsRepository {
     private final int PORT = 8888;
     private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
     private final String CREDENTIALS_FILE_PATH = "/json/credentials.json";
+
+
 
     private Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException{
 

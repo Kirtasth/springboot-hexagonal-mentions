@@ -35,3 +35,6 @@ build/
 ### Google ###
 /src/main/resources/json/credentials.json
 /src/main/resources/json/token.json
+
+### Enviroment ###
+.env
