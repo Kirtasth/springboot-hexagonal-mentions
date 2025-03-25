@@ -3,8 +3,10 @@ package com.kirtasth.springboot.menciones.app.mencionesappfinal.professor.infras
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.professor.domain.model.ProfessorRole;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 
 @Entity
@@ -20,29 +22,18 @@ public class ProfessorEntity {
 
     private String name;
 
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "discord_name", unique = true)
+    @Column(name = "discord_name")
     private String discordName;
 
     @Enumerated(EnumType.STRING)
     private ProfessorRole professorRole;
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
+    @CreationTimestamp
+    private Instant createdAt;
 
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    @UpdateTimestamp
+    private Instant updatedAt;
 
-    @PrePersist
-    private void onCreate() {
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    private void onUpdate(){
-        this.updatedAt = LocalDateTime.now();
-    }
 }

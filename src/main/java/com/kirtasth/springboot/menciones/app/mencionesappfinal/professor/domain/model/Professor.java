@@ -16,9 +16,6 @@ public class Professor {
     private String name;
 
     @NotNull
-    private String lastName;
-
-    @NotNull
     private String discordName;
 
     @NotNull

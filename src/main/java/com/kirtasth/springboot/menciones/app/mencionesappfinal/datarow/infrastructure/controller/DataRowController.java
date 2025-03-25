@@ -1,4 +1,4 @@
-package com.kirtasth.springboot.menciones.app.mencionesappfinal.datarow.domain.controller;
+package com.kirtasth.springboot.menciones.app.mencionesappfinal.datarow.infrastructure.controller;
 
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.datarow.domain.DataRow;
 import org.springframework.http.ResponseEntity;
