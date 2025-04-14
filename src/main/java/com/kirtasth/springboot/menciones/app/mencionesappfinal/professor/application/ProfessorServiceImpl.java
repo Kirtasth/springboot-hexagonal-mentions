@@ -45,4 +45,5 @@ public class ProfessorServiceImpl implements ProfessorService {
     public List<Professor> findAll() {
         return professorRepository.findAll();
     }
+
 }

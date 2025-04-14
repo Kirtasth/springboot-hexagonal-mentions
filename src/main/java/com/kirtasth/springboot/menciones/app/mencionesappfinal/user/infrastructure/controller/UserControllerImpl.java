@@ -1,6 +1,5 @@
 package com.kirtasth.springboot.menciones.app.mencionesappfinal.user.infrastructure.controller;
 
-import com.kirtasth.springboot.menciones.app.mencionesappfinal.exception.domain.NotFoundException;
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.role.domain.model.Role;
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.role.infrastructure.rest.RoleDto;
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.role.infrastructure.rest.RoleDtoMapper;
@@ -10,7 +9,6 @@ import com.kirtasth.springboot.menciones.app.mencionesappfinal.user.domain.model
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.user.infrastructure.rest.UserDto;
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.user.infrastructure.rest.UserDtoMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.kirtasth.springboot.menciones.app.mencionesappfinal.util;
+package com.kirtasth.springboot.menciones.app.mencionesappfinal.config.infrastructure;
 
 
 import org.springframework.context.annotation.Configuration;
