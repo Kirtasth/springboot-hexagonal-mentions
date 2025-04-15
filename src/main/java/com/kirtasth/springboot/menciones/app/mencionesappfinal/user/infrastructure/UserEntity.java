@@ -4,15 +4,11 @@ package com.kirtasth.springboot.menciones.app.mencionesappfinal.user.infrastruct
 import com.kirtasth.springboot.menciones.app.mencionesappfinal.role.infrastructure.RoleEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.Instant;
-import java.util.Collection;
 import java.util.List;
 
 @Getter
@@ -60,5 +56,6 @@ public class UserEntity{
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Instant updatedAt;
+
 
 }

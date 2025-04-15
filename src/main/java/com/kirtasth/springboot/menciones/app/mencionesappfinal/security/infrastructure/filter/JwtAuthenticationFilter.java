@@ -48,6 +48,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             UserDto userDto = new ObjectMapper().readValue(request.getInputStream(), UserDto.class);
             UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                     new UsernamePasswordAuthenticationToken(userDto.getUsername(), userDto.getPassword());
+
             return authenticationManager.authenticate(usernamePasswordAuthenticationToken);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -70,7 +71,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         String token = Jwts.builder()
                 .subject(user.getUsername())
                 .claims(claims)
-                .expiration(new Date(System.currentTimeMillis() + expiration))
+                .expiration(new Date(System.currentTimeMillis() + this.expiration))
                 .issuedAt(new Date())
                 .signWith(this.secret)
                 .compact();

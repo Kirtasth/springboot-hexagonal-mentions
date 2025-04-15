@@ -3,7 +3,6 @@ package com.kirtasth.springboot.menciones.app.mencionesappfinal.role.infrastruct
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name = "roles")

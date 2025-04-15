@@ -33,5 +33,4 @@ public class User {
     private boolean accountNonLocked;
 
     private boolean credentialsNonExpired;
-
 }
